@@ -32,7 +32,7 @@
         <tr>
             <td>
                 @* @Html.DisplayFor(modelItem => item.Category.CategoryId) *@
-                    @item.Category.Title
+                    @item.Category.TitleWithIcon
 
             </td>
             <td>
@@ -45,8 +45,8 @@
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Tid">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Tid">Details</a> |
+                    <a asp-action="AddOrEdit" asp-route-id="@item.Tid">Edit</a> |
+                @* <a asp-action="Details" asp-route-id="@item.Tid">Details</a> | *@
                 <a asp-action="Delete" asp-route-id="@item.Tid">Delete</a>
             </td>
         </tr>
