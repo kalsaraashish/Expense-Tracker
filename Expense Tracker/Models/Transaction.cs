@@ -9,7 +9,7 @@ namespace Expense_Tracker.Models
         public int Tid { get; set; }
 
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
         public int Amount { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
