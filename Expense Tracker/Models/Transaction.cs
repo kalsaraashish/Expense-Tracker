@@ -16,5 +16,14 @@ namespace Expense_Tracker.Models
         public string? Note { get; set; }
 
         public DateTime Date { get; set; }= DateTime.Now;
+
+        [NotMapped]
+        public string? FormattedAmout
+        {
+            get 
+            { 
+                return ((Category == null || Category.Type== "Expense")? "- " : "+ ")+Amount.ToString("C0");
+            }
+        }
     }
 }

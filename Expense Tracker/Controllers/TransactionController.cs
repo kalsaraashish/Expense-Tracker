@@ -25,26 +25,9 @@ namespace Expense_Tracker.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Transaction/Details/5
-        //public async Task<IActionResult> Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+        
 
-        //    var transaction = await _context.Transactions
-        //        .Include(t => t.Category)
-        //        .FirstOrDefaultAsync(m => m.Tid == id);
-        //    if (transaction == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(transaction);
-        //}
-
-        // GET: Transaction/Create
+        // GET: Transaction/AddOrEdit
         public IActionResult AddOrEdit(int id=0)
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "TitleWithIcon");
@@ -84,77 +67,7 @@ namespace Expense_Tracker.Controllers
             return View(transaction);
         }
 
-        //// GET: Transaction/Edit/5
-        //public async Task<IActionResult> Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var transaction = await _context.Transactions.FindAsync(id);
-        //    if (transaction == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", transaction.CategoryId);
-        //    return View(transaction);
-        //}
-
-        //// POST: Transaction/Edit/5
-        //// To protect from overposting attacks, enable the specific properties you want to bind to.
-        //// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Edit(int id, [Bind("Tid,CategoryId,Amount,Note,Date")] Transaction transaction)
-        //{
-        //    if (id != transaction.Tid)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    if (ModelState.IsValid)
-        //    {
-        //        try
-        //        {
-        //            _context.Update(transaction);
-        //            await _context.SaveChangesAsync();
-        //        }
-        //        catch (DbUpdateConcurrencyException)
-        //        {
-        //            if (!TransactionExists(transaction.Tid))
-        //            {
-        //                return NotFound();
-        //            }
-        //            else
-        //            {
-        //                throw;
-        //            }
-        //        }
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", transaction.CategoryId);
-        //    return View(transaction);
-        //}
-
-        // GET: Transaction/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var transaction = await _context.Transactions
-        //        .Include(t => t.Category)
-        //        .FirstOrDefaultAsync(m => m.Tid == id);
-        //    if (transaction == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(transaction);
-        //}
+        
 
         // POST: Transaction/Delete/5
         [HttpPost, ActionName("Delete")]
