@@ -1,0 +1,8 @@
+create docker image :
+    docker build -t expense-tracker .
+
+view created images :
+    docker images
+
+run the docker container : 
+    docker run -d -p 8080:8080 --name expense-api expense-tracker
